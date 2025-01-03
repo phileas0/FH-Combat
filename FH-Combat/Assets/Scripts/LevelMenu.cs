@@ -1,46 +1,38 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class LevelMenu : MonoBehaviour
 {
-    public Button[] levelButtons; // Assign your level buttons in the Inspector
+    // Die höchste freigeschaltete Levelnummer (ohne Speicherung)
+    // private int unlockedLevel = 1;
 
-    void Start()
+    // Diese Methode lädt die ausgewählte Level-Szene, wenn der Button angeklickt wird
+    public void LoadLevel(int levelNumber)
     {
-        // Check the player's progress from PlayerPrefs
-        int unlockedLevels = PlayerPrefs.GetInt("UnlockedLevels", 1); // Default is 1 (only Level 1 unlocked)
+        SceneManager.LoadScene("Level" + levelNumber); // Szene basierend auf der Levelnummer laden
 
-        // Loop through the buttons and enable/disable them based on the unlocked levels
-        for (int i = 0; i < levelButtons.Length; i++)
+        /*if (levelNumber <= unlockedLevel)
         {
-            if (i + 1 > unlockedLevels)
-            {
-                levelButtons[i].interactable = false; // Disable the button if the level is locked
-            }
-            else
-            {
-                levelButtons[i].interactable = true; // Enable the button if the level is unlocked
-            }
+            füg obere logik hierhin
         }
-    }
-
-    // Method to load a level
-    public void LoadLevel(int levelIndex)
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    // Method to unlock the next level (call this when a boss is defeated)
-    public static void UnlockNextLevel(int completedLevel)
-    {
-        int unlockedLevels = PlayerPrefs.GetInt("UnlockedLevels", 1);
-
-        if (completedLevel >= unlockedLevels)
+        else
         {
-            PlayerPrefs.SetInt("UnlockedLevels", completedLevel + 1);
-            PlayerPrefs.Save();
-        }
+            Debug.Log("Dieses Level ist noch gesperrt!");
+        }*/
     }
+
+    // Diese Methode wird aufgerufen, wenn der Spieler das aktuelle Level beendet (z.B. nach einem Sieg)
+    /*public void CompleteCurrentLevel()
+    {
+        if (unlockedLevel < 5) 
+        {
+            unlockedLevel++;
+        }
+
+        Debug.Log("Nächstes Level freigeschaltet: " + unlockedLevel);
+
+        // Direkt ins nächste Level wechseln
+        SceneManager.LoadScene("Level" + unlockedLevel);
+    }*/
 }
 
