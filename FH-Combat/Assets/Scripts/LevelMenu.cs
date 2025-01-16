@@ -7,9 +7,48 @@ public class LevelMenu : MonoBehaviour
     // private int unlockedLevel = 1;
 
     // Diese Methode lädt die ausgewählte Level-Szene, wenn der Button angeklickt wird
-    public void LoadLevel(int levelNumber)
+    /* public void LoadLevel(int levelNumber)
+     {
+
+         if (levelNumber <= unlockedLevel)
+         {
+             SceneManager.LoadScene("Leveldes" + levelNumber); // Szene basierend auf der Levelnummer laden
+
+         }
+         else
+         {
+             Debug.Log("Dieses Level ist noch gesperrt!");
+         }
+     }*/
+    public void LoadLevel1()
     {
-        SceneManager.LoadScene("Level" + levelNumber); // Szene basierend auf der Levelnummer laden
+        SceneManager.LoadScene("Leveldes1"); // Szene basierend auf der Levelnummer laden
+
+        /*if (levelNumber <= unlockedLevel)
+        {
+            füg obere logik hierhin
+        }
+        else
+        {
+            Debug.Log("Dieses Level ist noch gesperrt!");
+        }*/
+    }
+    public void LoadLevel2()
+    {
+        SceneManager.LoadScene("Leveldes2"); // Szene basierend auf der Levelnummer laden
+
+        /*if (levelNumber <= unlockedLevel)
+        {
+            füg obere logik hierhin
+        }
+        else
+        {
+            Debug.Log("Dieses Level ist noch gesperrt!");
+        }*/
+    }
+    public void LoadLevel3()
+    {
+        SceneManager.LoadScene("Leveldes3"); // Szene basierend auf der Levelnummer laden
 
         /*if (levelNumber <= unlockedLevel)
         {
