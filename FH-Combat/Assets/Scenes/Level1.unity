@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 99813138}
   - component: {fileID: 99813137}
   - component: {fileID: 99813136}
+  - component: {fileID: 99813140}
   m_Layer: 0
   m_Name: Detector
   m_TagString: Untagged
@@ -339,8 +340,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 859.6987
-        y: 352.8453
+        x: 315.6953
+        y: 208.84375
         width: 119.53
         height: 64
       isBreakpoint: 0
@@ -351,7 +352,7 @@ MonoBehaviour:
           name: HitPlayer
           isSystemEvent: 0
           isGlobal: 1
-        toState: Zustand 2
+        toState: Check if animation played
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -494,8 +495,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1321.6987
-        y: 348.8453
+        x: 777.6953
+        y: 204.84375
         width: 100
         height: 32
       isBreakpoint: 0
@@ -617,8 +618,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 600.21436
-        y: 204.8453
+        x: 56.210938
+        y: 60.84375
         width: 133.82
         height: 32
       isBreakpoint: 0
@@ -706,8 +707,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 802.21436
-        y: 560.84534
+        x: 258.21094
+        y: 416.84375
         width: 100
         height: 16
       isBreakpoint: 0
@@ -769,6 +770,114 @@ MonoBehaviour:
         - realTime
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
+    - name: Check if animation played
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 541.60156
+        y: 287.45312
+        width: 181.96
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Zustand 3
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: SendHit
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Zustand 2
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetAnimatorCurrentStateInfoIsName
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: b510bc05
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 486465048}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: KB_m_MidKickStraight_R
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - SendHit
+        - FINISHED
+        byteData: 0000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1400000010000000120000001100000017000000170000000100000007000000
+        paramName:
+        - gameObject
+        - layerIndex
+        - name
+        - isMatching
+        - nameMatchEvent
+        - nameDoNotMatchEvent
+        - everyFrame
+        - everyFrameOption
+        paramDataPos: 0000000000000000000000000000000000000000010000000000000001000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000100000004000000
     events:
     - name: Hit
       isSystemEvent: 0
@@ -789,6 +898,9 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 0
     - name: Deactivate
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: SendHit
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
@@ -944,6 +1056,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99813134}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &99813140
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99813134}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &110668298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2879,7 +3013,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296102706}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0029610093, y: -0.7161595, z: -0.0030383768, w: 0.6979237}
+  m_LocalRotation: {x: -0.0029508378, y: -0.7184883, z: -0.003048257, w: 0.6955262}
   m_LocalPosition: {x: 36.20173, y: 7.36176, z: 0.98521614}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8334,6 +8468,7 @@ GameObject:
   - component: {fileID: 883816510}
   - component: {fileID: 883816509}
   - component: {fileID: 883816508}
+  - component: {fileID: 883816512}
   m_Layer: 0
   m_Name: Detector
   m_TagString: Untagged
@@ -8391,7 +8526,7 @@ MonoBehaviour:
           name: HitPlayer
           isSystemEvent: 0
           isGlobal: 1
-        toState: Zustand 2
+        toState: Check if animation played
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -8534,8 +8669,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 774.4844
-        y: 202
+        x: 679.84375
+        y: 202.69531
         width: 100
         height: 32
       isBreakpoint: 0
@@ -8809,6 +8944,114 @@ MonoBehaviour:
         - realTime
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
+    - name: Check if animation played
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 481
+        y: 310.57812
+        width: 181.96
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Zustand 1
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: SendHit
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Zustand 2
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetAnimatorCurrentStateInfoIsName
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: b510bc05
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 486465048}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: KB_m_MidKickStraight_R
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - SendHit
+        - FINISHED
+        byteData: 0000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1400000010000000120000001100000017000000170000000100000007000000
+        paramName:
+        - gameObject
+        - layerIndex
+        - name
+        - isMatching
+        - nameMatchEvent
+        - nameDoNotMatchEvent
+        - everyFrame
+        - everyFrameOption
+        paramDataPos: 0000000000000000000000000000000000000000010000000000000001000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000100000004000000
     events:
     - name: Hit
       isSystemEvent: 0
@@ -8829,6 +9072,9 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 0
     - name: Deactivate
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: SendHit
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
@@ -8984,6 +9230,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883816506}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &883816512
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883816506}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &921551174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9233,7 +9501,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032237646}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0029610095, y: -0.7161595, z: -0.0030383766, w: 0.6979238}
+  m_LocalRotation: {x: -0.0029508376, y: -0.7184882, z: -0.003048257, w: 0.6955262}
   m_LocalPosition: {x: 36.20173, y: 7.36176, z: 0.98521614}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10550,6 +10818,7 @@ GameObject:
   - component: {fileID: 1308904302}
   - component: {fileID: 1308904301}
   - component: {fileID: 1308904300}
+  - component: {fileID: 1308904304}
   m_Layer: 0
   m_Name: Detector
   m_TagString: Untagged
@@ -10595,8 +10864,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 788.9772
-        y: 416.60236
+        x: 324.97656
+        y: 208.60156
         width: 119.53
         height: 64
       isBreakpoint: 0
@@ -10607,7 +10876,7 @@ MonoBehaviour:
           name: HitPlayer
           isSystemEvent: 0
           isGlobal: 1
-        toState: Zustand 2
+        toState: Check if animation played
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -10750,8 +11019,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1250.9772
-        y: 412.60236
+        x: 730.97656
+        y: 216.60156
         width: 100
         height: 32
       isBreakpoint: 0
@@ -10873,8 +11142,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 529.4928
-        y: 268.60236
+        x: 65.49219
+        y: 60.601562
         width: 133.82
         height: 32
       isBreakpoint: 0
@@ -10962,8 +11231,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 731.4928
-        y: 624.60236
+        x: 267.4922
+        y: 416.60156
         width: 100
         height: 16
       isBreakpoint: 0
@@ -11025,6 +11294,152 @@ MonoBehaviour:
         - realTime
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
+    - name: Check if animation played
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 505
+        y: 271
+        width: 181.96
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Zustand 3
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: SendHit
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Zustand 2
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetAnimatorCurrentStateInfoIsName
+        - HutongGames.PlayMaker.Actions.GetAnimatorCurrentStateInfoIsName
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000008000000
+        actionHashCodes: b510bc05b510bc05
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 486465048}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 486465048}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: KB_m_Hook_L
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: KB_m_MidKickStraight_R
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - SendHit
+        - FINISHED
+        - SendHit
+        - FINISHED
+        byteData: 00000000000000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000100000001200000011000000170000001700000001000000070000001400000010000000120000001100000017000000170000000100000007000000
+        paramName:
+        - gameObject
+        - layerIndex
+        - name
+        - isMatching
+        - nameMatchEvent
+        - nameDoNotMatchEvent
+        - everyFrame
+        - everyFrameOption
+        - gameObject
+        - layerIndex
+        - name
+        - isMatching
+        - nameMatchEvent
+        - nameDoNotMatchEvent
+        - everyFrame
+        - everyFrameOption
+        paramDataPos: 00000000000000000000000000000000000000000100000000000000010000000100000001000000010000000100000002000000030000000500000006000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000040000000000000000000000000000000000000000000000000000000100000004000000
     events:
     - name: Hit
       isSystemEvent: 0
@@ -11041,6 +11456,15 @@ MonoBehaviour:
     - name: HitPlayer
       isSystemEvent: 0
       isGlobal: 1
+    - name: SendHit
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: DeactivateFSM
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Deactivate
+      isSystemEvent: 0
+      isGlobal: 0
     globalTransitions: []
     variables:
       floatVariables: []
@@ -11194,6 +11618,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308904298}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1308904304
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308904298}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1317047455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15909,6 +16355,7 @@ GameObject:
   - component: {fileID: 2081170917}
   - component: {fileID: 2081170916}
   - component: {fileID: 2081170915}
+  - component: {fileID: 2081170919}
   m_Layer: 0
   m_Name: Detector
   m_TagString: Untagged
@@ -15954,8 +16401,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 721.9791
-        y: 844.2911
+        x: 321.97656
+        y: 204.28906
         width: 119.53
         height: 64
       isBreakpoint: 0
@@ -15966,7 +16413,7 @@ MonoBehaviour:
           name: HitPlayer
           isSystemEvent: 0
           isGlobal: 1
-        toState: Zustand 2
+        toState: Check if animation played
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -16109,8 +16556,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1183.9791
-        y: 840.2911
+        x: 783.97656
+        y: 200.28906
         width: 100
         height: 32
       isBreakpoint: 0
@@ -16232,8 +16679,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 462.49478
-        y: 696.2911
+        x: 62.492188
+        y: 56.289062
         width: 133.82
         height: 32
       isBreakpoint: 0
@@ -16321,8 +16768,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 664.49475
-        y: 1052.291
+        x: 264.4922
+        y: 412.28906
         width: 100
         height: 16
       isBreakpoint: 0
@@ -16384,6 +16831,152 @@ MonoBehaviour:
         - realTime
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
+    - name: Check if animation played
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 673.47656
+        y: 361.78906
+        width: 181.96
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Zustand 3
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: SendHit
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Zustand 2
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetAnimatorCurrentStateInfoIsName
+        - HutongGames.PlayMaker.Actions.GetAnimatorCurrentStateInfoIsName
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000008000000
+        actionHashCodes: b510bc05b510bc05
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 486465048}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 486465048}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: KB_m_Hook_L
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: KB_m_MidKickStraight_R
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - SendHit
+        - FINISHED
+        - SendHit
+        - FINISHED
+        byteData: 00000000000000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000100000001200000011000000170000001700000001000000070000001400000010000000120000001100000017000000170000000100000007000000
+        paramName:
+        - gameObject
+        - layerIndex
+        - name
+        - isMatching
+        - nameMatchEvent
+        - nameDoNotMatchEvent
+        - everyFrame
+        - everyFrameOption
+        - gameObject
+        - layerIndex
+        - name
+        - isMatching
+        - nameMatchEvent
+        - nameDoNotMatchEvent
+        - everyFrame
+        - everyFrameOption
+        paramDataPos: 00000000000000000000000000000000000000000100000000000000010000000100000001000000010000000100000002000000030000000500000006000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000040000000000000000000000000000000000000000000000000000000100000004000000
     events:
     - name: Hit
       isSystemEvent: 0
@@ -16400,6 +16993,15 @@ MonoBehaviour:
     - name: HitPlayer
       isSystemEvent: 0
       isGlobal: 1
+    - name: DeactivateFSM
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Deactivate
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: SendHit
+      isSystemEvent: 0
+      isGlobal: 0
     globalTransitions: []
     variables:
       floatVariables: []
@@ -16553,6 +17155,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081170913}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &2081170919
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081170913}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2141661412
 PrefabInstance:
   m_ObjectHideFlags: 0
