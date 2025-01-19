@@ -20,6 +20,18 @@ public class LevelMenu : MonoBehaviour
              Debug.Log("Dieses Level ist noch gesperrt!");
          }
      }*/
+
+    void Start()
+    {
+        Animator animator = GetComponent<Animator>();
+        animator.Play(animator.GetCurrentAnimatorStateInfo(0).shortNameHash, -1, 0f);
+    }
+
+    public void LoadCanvas()
+    {
+        SceneManager.LoadScene("ChooseOpponent");
+    }
+
     public void LoadLevel1()
     {
         SceneManager.LoadScene("Leveldes1"); // Szene basierend auf der Levelnummer laden

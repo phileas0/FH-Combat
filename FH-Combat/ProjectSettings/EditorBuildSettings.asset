@@ -12,23 +12,26 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelMap.unity
     guid: b8312ebd16e072a43a675f34c2c9f894
   - enabled: 1
+    path: Assets/Scenes/ChooseOpponent.unity
+    guid: 6e0eccebfb2e353469a926cfa57631e5
+  - enabled: 1
     path: Assets/Scenes/Leveldes1.unity
     guid: 759051fa89d9263499d9618e11253999
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Scenes/Level1.unity
     guid: b654368134c254c72874be6f721ea6fd
   - enabled: 1
     path: Assets/Scenes/Leveldes2.unity
     guid: 8811e821aa2fec145a3899d9b66dd611
   - enabled: 1
     path: Assets/Scenes/Level2.unity
-    guid: 56dfcca32c6e0c540abc5c99bc0e93d1
+    guid: ff01ce96f39a55e439d256ab0bfff846
   - enabled: 1
     path: Assets/Scenes/Leveldes3.unity
     guid: e20b0b9d84c02374e8deed5ab485dd88
   - enabled: 1
     path: Assets/Scenes/Level3.unity
-    guid: d52d34e110eed294ab24a578385fefb7
+    guid: c412929607265a0488c81698336a41b1
   - enabled: 0
     path: Assets/Scenes/Level4.unity
     guid: 8ad554bf3ef0ffd49b6d553b9947ba81
