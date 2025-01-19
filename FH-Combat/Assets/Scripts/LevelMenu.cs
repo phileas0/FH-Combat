@@ -60,6 +60,11 @@ public class LevelMenu : MonoBehaviour
         }*/
     }
 
+    public void Return()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     // Diese Methode wird aufgerufen, wenn der Spieler das aktuelle Level beendet (z.B. nach einem Sieg)
     /*public void CompleteCurrentLevel()
     {
