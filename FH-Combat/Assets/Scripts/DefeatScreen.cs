@@ -4,40 +4,25 @@ using UnityEngine.SceneManagement;
 public class DefeatScreen : MonoBehaviour
 {
    
+    public Animator animator;
+    
     // Methode, die vom Retry-Button aufgerufen wird
     public void RetryLevel()
     {
-        // Aktuelles Level neu laden
-        Scene currentScene = SceneManager.GetActiveScene();
-
-        // Animator für Player und Enemy suchen
-        Animator playerAnimator = GameObject.Find("Player").GetComponent<Animator>();
-        Animator enemyAnimator = GameObject.Find("Enemy").GetComponent<Animator>();
-
-        // Animator-Parameter zurücksetzen
-        if (playerAnimator != null)
-        {
-            playerAnimator.SetBool("Victory", false); // Setze Victory-Variable auf false
-        }
-
-        if (enemyAnimator != null)
-        {
-            enemyAnimator.SetBool("KB_Stretch", false); // Setze Victory-Variable auf false
-            enemyAnimator.Play("KB_Idle_1", -1, 0f);
-        }
-
-        // Level neu laden
-        SceneManager.LoadScene(currentScene.buildIndex);
-        Time.timeScale = 1f; // Spielzeit zurücksetzen
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-
+    public void ResetAnimatorParameters()
+    {
+        // Setze den 'victory'-Parameter zurÃ¼ck
+        animator.SetBool("Victory", false);
+    }
     // Methode, die vom Main Menu-Button aufgerufen wird
     public void GoToMainMenu()
     {
-        // Hauptmenü-Szene laden
+        // Hauptmenï¿½-Szene laden
         SceneManager.LoadScene("MainMenu"); // Stelle sicher, dass deine Main Menu-Szene genau diesen Namen hat
-        Time.timeScale = 1f; // Spielzeit zurücksetzen
+        Time.timeScale = 1f; // Spielzeit zurï¿½cksetzen
     }
 
     public void NextLevel()
