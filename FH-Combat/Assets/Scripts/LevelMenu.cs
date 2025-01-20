@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class LevelMenu : MonoBehaviour
 {
     // Die höchste freigeschaltete Levelnummer (ohne Speicherung)
-    // private int unlockedLevel = 1;
+     private int unlockedLevel = 1;
 
     // Diese Methode lädt die ausgewählte Level-Szene, wenn der Button angeklickt wird
     /* public void LoadLevel(int levelNumber)
@@ -21,55 +21,47 @@ public class LevelMenu : MonoBehaviour
          }
      }*/
 
-    void Start()
-    {
-        Animator animator = GetComponent<Animator>();
-        animator.Play(animator.GetCurrentAnimatorStateInfo(0).shortNameHash, -1, 0f);
-    }
-
     public void LoadCanvas()
     {
         SceneManager.LoadScene("ChooseOpponent");
     }
 
-    public void LoadLevel1()
+    public void LoadLevel1(int levelNumber)
     {
-        SceneManager.LoadScene("Leveldes1"); // Szene basierend auf der Levelnummer laden
-
-        /*if (levelNumber <= unlockedLevel)
+        
+        if (levelNumber <= unlockedLevel)
         {
-            füg obere logik hierhin
+            SceneManager.LoadScene("Leveldes1"); // Szene basierend auf der Levelnummer laden
+
         }
         else
         {
             Debug.Log("Dieses Level ist noch gesperrt!");
-        }*/
+        }
     }
-    public void LoadLevel2()
+    public void LoadLevel2(int levelNumber)
     {
-        SceneManager.LoadScene("Leveldes2"); // Szene basierend auf der Levelnummer laden
-
-        /*if (levelNumber <= unlockedLevel)
+        
+        if (levelNumber <= unlockedLevel)
         {
-            füg obere logik hierhin
+           SceneManager.LoadScene("Leveldes2"); // Szene basierend auf der Levelnummer laden
+
         }
         else
         {
             Debug.Log("Dieses Level ist noch gesperrt!");
-        }*/
+        }
     }
-    public void LoadLevel3()
+    public void LoadLevel3(int levelNumber)
     {
-        SceneManager.LoadScene("Leveldes3"); // Szene basierend auf der Levelnummer laden
-
-        /*if (levelNumber <= unlockedLevel)
+        if (levelNumber <= unlockedLevel)
         {
-            füg obere logik hierhin
+           SceneManager.LoadScene("Leveldes3"); // Szene basierend auf der Levelnummer laden
         }
         else
         {
             Debug.Log("Dieses Level ist noch gesperrt!");
-        }*/
+        }
     }
 
     public void Return()
@@ -78,9 +70,9 @@ public class LevelMenu : MonoBehaviour
     }
 
     // Diese Methode wird aufgerufen, wenn der Spieler das aktuelle Level beendet (z.B. nach einem Sieg)
-    /*public void CompleteCurrentLevel()
+    public void CompleteCurrentLevel()
     {
-        if (unlockedLevel < 5) 
+        if (unlockedLevel < 3) 
         {
             unlockedLevel++;
         }
@@ -89,6 +81,6 @@ public class LevelMenu : MonoBehaviour
 
         // Direkt ins nächste Level wechseln
         SceneManager.LoadScene("Level" + unlockedLevel);
-    }*/
+    }
 }
 

@@ -29,4 +29,10 @@ public class DefeatScreen : MonoBehaviour
     {
         SceneManager.LoadScene("Leveldes3");
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Spiel wird beendet..."); // Debug-Log für den Editor
+        Application.Quit();
+    }
 }
