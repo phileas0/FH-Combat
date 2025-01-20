@@ -9244,6 +9244,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: enemy1
       objectReference: {fileID: 0}
+    - target: {fileID: 4747904710347621765, guid: e605a91b4acd046bebae35e35165d1a8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.008253494
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747904710347621765, guid: e605a91b4acd046bebae35e35165d1a8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.053759396
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: e605a91b4acd046bebae35e35165d1a8, type: 3}
       propertyPath: m_Avatar
       value: 
@@ -9251,7 +9259,15 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: e605a91b4acd046bebae35e35165d1a8, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 190f57b6918ea984c989c6b31f76dea8, type: 2}
+      objectReference: {fileID: 9100000, guid: 3f11f8d0dae30a74fae3f591b0557d33, type: 2}
+    - target: {fileID: 7666680083751660616, guid: e605a91b4acd046bebae35e35165d1a8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000016402217
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666680083751660616, guid: e605a91b4acd046bebae35e35165d1a8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0029030468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -9285,7 +9301,7 @@ PrefabInstance:
       addedObject: {fileID: 1702047483}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e605a91b4acd046bebae35e35165d1a8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1702047490}
+      addedObject: {fileID: 1702047488}
   m_SourcePrefab: {fileID: 100100000, guid: e605a91b4acd046bebae35e35165d1a8, type: 3}
 --- !u!1 &1216420274
 GameObject:
@@ -12527,12 +12543,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.Wait
+        - HutongGames.PlayMaker.Actions.SetBoolValue
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 48c01101
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 48c0110127fbe103
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -12555,7 +12573,19 @@ MonoBehaviour:
           networkSync: 0
           value: 4
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 1
+          name: JoyceSpevial Attack
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -12563,18 +12593,21 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - FINISHED
-        byteData: 00
+        byteData: 0000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000001700000001000000
+        paramDataType: 0f0000001700000001000000110000001100000001000000
         paramName:
         - time
         - finishEvent
         - realTime
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000001000000
+        - boolVariable
+        - boolValue
+        - everyFrame
+        paramDataPos: 000000000000000000000000000000000100000001000000
+        paramByteDataSize: 000000000000000001000000000000000000000001000000
     events:
     - name: Defeat Screen
       isSystemEvent: 0
@@ -13103,7 +13136,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.94, z: 0}
---- !u!114 &1702047490
+--- !u!114 &1702047488
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13119,15 +13152,15 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 0}
     name: FSM
-    startState: State 1
+    startState: State 2
     states:
-    - name: State 1
+    - name: State 2
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 50
-        y: 116
+        x: 609.5
+        y: 341.5
         width: 100
         height: 16
       isBreakpoint: 0
@@ -13205,8 +13238,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 307
-        y: 112
+        x: 934.5
+        y: 333.5
         width: 100
         height: 32
       isBreakpoint: 0
@@ -13217,7 +13250,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: State 1
+        toState: State 2
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -13344,13 +13377,7 @@ MonoBehaviour:
         - realTime
         paramDataPos: 0000000001000000000000000000000000000000020000000100000002000000010000000100000000000000060000000700000000000000000000000b000000
         paramByteDataSize: 00000000000000000100000000000000000000000000000001000000040000000000000000000000000000000100000004000000000000000000000001000000
-    events:
-    - name: Hit
-      isSystemEvent: 0
-      isGlobal: 1
-    - name: FINISHED
-      isSystemEvent: 1
-      isGlobal: 0
+    events: []
     globalTransitions:
     - fsmEvent:
         name: Hit
