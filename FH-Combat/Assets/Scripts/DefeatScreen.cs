@@ -20,6 +20,7 @@ public class DefeatScreen : MonoBehaviour
     // Methode, die vom Main Menu-Button aufgerufen wird
     public void GoToMainMenu()
     {
+        SaveProgress();
         // Hauptmen�-Szene laden
         SceneManager.LoadScene("MainMenu"); // Stelle sicher, dass deine Main Menu-Szene genau diesen Namen hat
         Time.timeScale = 1f; // Spielzeit zur�cksetzen
@@ -34,5 +35,20 @@ public class DefeatScreen : MonoBehaviour
     {
         Debug.Log("Spiel wird beendet..."); // Debug-Log für den Editor
         Application.Quit();
+    }
+
+    private void SaveProgress()
+    {
+        // Lade aktuellen Fortschritt
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+
+        // Falls Level 3 noch nicht freigeschaltet ist, freischalten
+        if (unlockedLevel < 3)
+        {
+            unlockedLevel = 3;
+            PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel); // Fortschritt speichern
+            PlayerPrefs.Save(); // Änderungen dauerhaft speichern
+            Debug.Log("Fortschritt gespeichert: " + unlockedLevel);
+        }
     }
 }

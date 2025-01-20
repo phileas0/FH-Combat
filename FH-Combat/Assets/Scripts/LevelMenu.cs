@@ -21,6 +21,12 @@ public class LevelMenu : MonoBehaviour
          }
      }*/
 
+    void Start()
+    {
+        // Lade den Fortschritt beim Start
+        unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1); // Standardwert ist 1
+    }
+
     public void LoadCanvas()
     {
         SceneManager.LoadScene("ChooseOpponent");
@@ -72,9 +78,11 @@ public class LevelMenu : MonoBehaviour
     // Diese Methode wird aufgerufen, wenn der Spieler das aktuelle Level beendet (z.B. nach einem Sieg)
     public void CompleteCurrentLevel()
     {
-        if (unlockedLevel < 3) 
+        if (unlockedLevel < 3) // Maximal 3 Levels freischalten
         {
             unlockedLevel++;
+            PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel); // Speichere den Fortschritt
+            PlayerPrefs.Save(); // Speichert die Änderungen dauerhaft
         }
 
         Debug.Log("Nächstes Level freigeschaltet: " + unlockedLevel);
